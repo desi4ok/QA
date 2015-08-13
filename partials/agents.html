@@ -1,0 +1,19 @@
+<div class="tab-pane fade active in" id="agents" ng-controller="AgentsController">
+	<table class="table table-stripped table-hover" ng-controller="UserController">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Extension</th>
+				<th>Department</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="agent in agents.results | filter: search">
+				<td>{{ agent.name }}</td>
+				<td>{{ agent.ext }}</td>
+				<td>{{ agent.dep }}</td>
+				<td class="agent-edit-td" ng-if="checker"><a class="btn btn-sm btn-danger" id="{{ agent.objectId }}" href="#" ng-click="deleteAgent(agent.objectId)">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

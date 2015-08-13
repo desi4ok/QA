@@ -1,0 +1,39 @@
+<div class="modal fade" id="login" role="dialog" ng-app="extList">
+	<div class="modal-dialog">
+		<div class="modal-content">
+				
+			<form class="form-horizontal" role="form" method="GET" action="#" ng-controller="UserController" >
+		
+				<div class="modal-header">
+					<h4>Login</h4>
+				</div>
+				<div class="modal-body">
+					
+					<div class="form-group">
+					
+						<label for="username" class="col-lg-2 control-label">User:</label>
+						<div class="col-lg-10">
+							<input type="text" class="form-control" id="username" placeholder="username" ng-model="user.username">
+						</div>
+					
+					</div>
+					
+					<div class="form-group">
+					
+						<label for="password" class="col-lg-2 control-label">Password:</label>
+						<div class="col-lg-10">
+							<input type="password" class="form-control" id="password" placeholder="password" ng-model="user.password">
+						</div>
+					
+					</div>
+											
+					</div>
+				<div class="modal-footer">
+					<a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+					<button class="btn btn-primary" type="submit" ng-click="processLogin(user)">Login</button>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+</div>

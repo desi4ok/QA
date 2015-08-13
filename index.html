@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Extensions List</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
+	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+  </head>
+
+  <body ng-app="extList">
+
+  	<div data-ng-include="'/partials/login-modal.html'"></div>
+  	<div data-ng-include="'/partials/add-agent-modal.html'"></div>
+  	<div data-ng-include="'/partials/edit-agent-modal.html'"></div>
+
+	<div class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<a href="#" class="navbar-brand">| Extensions List | </a>
+
+			<button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbar-main" ng-controller="UserController">
+
+				<ul class="nav navbar-nav pull-left">
+					<li class=""><a href="#add-agent" data-toggle="modal" dataTarget="#add-agent" id="add-agent-menu-item" ng-if="checker">Add Agent</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav pull-right">
+					<li class=""><a href="#login" data-toggle="modal" dataTarget="#login" id="login-menu-item" ng-click="checkLogin()">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container" ng-controller="UserController">
+		<div class="row">
+			<div class="col-md-6">
+
+	            <ul class="nav nav-tabs">
+	            	<li class="active" id="agents-tab"><a href="#agents" data-toggle="tab">Agents</a></li>
+	                <li id="queues-tab"><a href="#queues" data-toggle="tab">Help Queues</a></li>
+	                <li id="phones-tab"><a href="#tel" data-toggle="tab">Phone Numbers</a></li>
+	                <li id="faxes-tab"><a href="#fax" data-toggle="tab">Fax Numbers</a></li>
+	            </ul>
+
+	            <div class="container row">
+	            	<div class="col-md-5">
+	            		<h4>Search:</h4>
+						<input class="form-control" type="text" placeholder="name or extension" ng-model="search" />
+	            	</div>
+				</div>
+
+				<div id="myTabContent" class="tab-content" ng-view>
+					<!-- AGENTS -->
+					<!-- HELP QUEUES -->
+					<!-- PHONE NUMBERS -->
+					<!-- FAX NUMBERS -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="text-center">
+		<input class="hide" type="checkbox" checked="checked" ng-model="checker" id="cheboxForEdit"/>
+	</footer>
+
+	<script src="libs/jquery.js"></script>
+	<script src="libs/angular.js"></script>
+	<script src="libs/angular-resource.js"></script>
+	<script src="libs/angular-route.js"></script>
+	<script src="libs/bootstrap.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers/AgentsController.js"></script>
+	<script src="js/controllers/QueuesController.js"></script>
+	<script src="js/controllers/TelephonesController.js"></script>
+	<script src="js/controllers/FaxesController.js"></script>
+	<script src="js/controllers/UserController.js"></script>
+	<script src="js/services/dataRequests.js"></script>
+	<script src="js/services/agentServices.js"></script>
+  </body>
+</html>
